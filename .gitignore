@@ -1,0 +1,6 @@
+# Untouched pre-trim originals. Kept locally so gif-trim-lead.js is reversible,
+# never published, because they are the versions with the black first frame.
+*.orig.gif
+
+# Local preview scratch.
+_*.html
