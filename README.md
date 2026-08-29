@@ -8,15 +8,20 @@ without a login. **Do not host these on Google Drive.** `lh3.googleusercontent.c
 links fail in Gmail and Outlook often enough to sink a send, which is why both
 prior campaigns moved off Drive.
 
-Target URL once published:
+**Published 29 Aug 2026.** Live at:
 
 ```
 https://mattbmcq.github.io/gunman-contracts-email-assets/<file>
 ```
 
-The email points at `https://PLACEHOLDER/gunman-contracts-email-assets/<file>`.
-Publish the repo, then replace `https://PLACEHOLDER` with `https://mattbmcq.github.io`
-in `docs/gunman-launch-email.html`.
+Pages serves from `main` at the repo root, the same arrangement as the two prior
+campaigns. The email already points at these URLs and all eleven files were
+verified returning 200 with the right content type.
+
+Anything committed here is **public and reachable by anyone who has the URL**.
+That is the trade every one of these campaigns makes, because an email client
+will not authenticate to fetch an image. Nothing is linked or indexed, but do
+not treat it as private.
 
 ## Where these came from
 
@@ -143,9 +148,15 @@ set of images and each has to work for a reader in either mode. Favour footage
 where the input method is not the subject. Keep headsets and motion controllers
 out of the header.
 
-## Before publishing
+## Before committing anything else
 
-Everything here becomes public the moment Pages is enabled, and a file is
-reachable by anyone who guesses the URL. Nothing pre-embargo goes in until it is
-cleared to be seen. Filenames are public too, so do not name a file after an
-unannounced date, platform or partner.
+Pages is already enabled, so **a new file is public the moment it is pushed.**
+There is no staging step. Nothing pre-embargo goes in until it is cleared to be
+seen, and filenames are public too, so do not name a file after an unannounced
+date, platform or partner.
+
+The three GIFs are gameplay, and the gameplay embargo does not lift until
+launch. They are here because an email client will not authenticate to fetch an
+image, which is the same trade the Downshot and Hide and Paint campaigns made.
+Nothing links to them and nothing indexes them, but they are reachable. If that
+is not acceptable to Arne, the alternative is an email with no footage in it.
