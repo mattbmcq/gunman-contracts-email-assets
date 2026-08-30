@@ -77,8 +77,32 @@ Five lead frames came off each file and **both files got smaller**.
 
 | File | Now opens on | Bytes |
 |---|---|---|
-| `gmc-main.gif` | A pistol and laser sight | 2588878 → 2579751 |
-| `gmc-story.gif` | The warehouse district in the rain | 2387961 → 2358725 |
+| `gmc-main.gif` | A pistol and laser sight | 2588878 → 2579823 |
+| `gmc-story.gif` | The warehouse district in the rain | 2387961 → 2358797 |
+
+### The first version of that trim froze both files. Read this before re-running
+
+The 29 Aug output played once and then stopped, which reads as a frozen image
+in a mail client. Reported by the owner on 30 Aug and fixed the same day.
+
+The script spliced its output from the end of the **global colour table**. In
+these files two more blocks sit between that table and the first frame, a
+comment extension and the `NETSCAPE2.0` application extension. **`NETSCAPE2.0`
+is the loop block.** Drop it and the GIF plays through exactly once and holds
+on its last frame.
+
+`gmc-hive.gif` was never trimmed, kept its loop block, and animated correctly
+throughout. That is the only reason the fault was visible as two-against-one.
+
+The fix splices from the first frame's own offset instead. **If you ever hand
+a GIF here to another tool, check the loop block survived**:
+
+```
+node -e "console.log(require('fs').readFileSync('x.gif').includes(Buffer.from('NETSCAPE2.0')))"
+```
+
+All three files now carry an identical block order, an infinite loop count and
+a 100ms frame delay. Verified against the live Pages URLs, not just locally.
 
 The untouched originals are kept beside them as `gmc-main.orig.gif` and
 `gmc-story.orig.gif`. **Do not wire those into the email**, and do not publish
